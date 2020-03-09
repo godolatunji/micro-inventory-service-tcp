@@ -22,6 +22,8 @@ const schema = joi
     FCG_BASE_URL: joi.string().required(),
     FCG_USERNAME: joi.string().required(),
     FCG_PASSWORD: joi.string().required(),
+
+    REDIS_URL: joi.string().required(),
   })
   .unknown()
   .required();
@@ -40,4 +42,5 @@ export const config = {
     username: envVars.FCG_USERNAME,
     password: envVars.FCG_PASSWORD,
   },
+  redisUrl: envVars.REDIS_URL,
 };

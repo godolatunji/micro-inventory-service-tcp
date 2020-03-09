@@ -4,8 +4,9 @@ import { CarRepository } from './car.repository';
 @Injectable()
 export class CarService {
   constructor(private readonly carRepository: CarRepository) {}
-  async findAll(params) {
-    const resp = this.carRepository.listCars(params);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  async findAll({ carQuery, headers }) {
+    const resp = this.carRepository.listCars(carQuery);
     return resp;
   }
 }
