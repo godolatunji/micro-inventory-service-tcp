@@ -10,7 +10,8 @@ export class CarController {
   ) {}
 
   @MessagePattern({ cmd: 'listCars' })
-  find(data): Promise<any> { // this should be typed
-    return this.carService.findAll(data);
+  find({ carQuery, headers }): Promise<any> {
+    // this should be typed
+    return this.carService.findAll({ carQuery, headers });
   }
 }
