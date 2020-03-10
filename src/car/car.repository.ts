@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { BaseRepository } from 'base.repository';
+import { convertObjectToString } from '../helpers/utils';
 import { Car } from './car.type';
 
 @Injectable()
@@ -346,9 +347,26 @@ export class CarRepository extends BaseRepository {
 
   async listCars(carQuery: any): Promise<Car[]> {
     const fields = carQuery.fields.split(',');
+    delete carQuery.fields;
+    let filter = {
+      sort: [
+        {
+          field: 'createdAt',
+          order: 'DESC',
+        },
+        {
+          field: 'country',
+          order: 'ASC',
+        },
+      ],
+    };
+
+    filter = Object.assign({}, filter, carQuery);
+    const gqFilter = convertObjectToString(filter);
+
     let data = `
         {
-            car(country: NG, limit: 1) {
+            car(${gqFilter}) {
               list {
                 id
                 internalId
