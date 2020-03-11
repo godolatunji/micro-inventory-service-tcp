@@ -1,5 +1,6 @@
 # Micro Inventory service
-[![Codecov Coverage](https://img.shields.io/codecov/c/github/devcars45/micro-inventory-service/develop.svg?style=flat-square)](https://codecov.io/github/Cars45/micro-inventory-service/)
+[![codecov](https://codecov.io/gh/Cars45/micro-inventory-service/branch/develop/graph/badge.svg?token=MSWNSJPMWR)](https:/codecov.io/gh/Cars45/micro-inventory-service)
+
 ![](https://github.com/Cars45/micro-inventory-service/workflows/Test%20Status/badge.svg)
 
 
