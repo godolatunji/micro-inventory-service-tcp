@@ -35,4 +35,3 @@ jobs:
     
       env:
         CI: true
-        CODECOV_TOKEN: 11ec9355-3f8f-4aaa-81d7-799e04015a83 
