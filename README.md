@@ -1,5 +1,7 @@
 # Micro Inventory service
-[![Codecov Coverage](https://img.shields.io/codecov/c/github/devcars45/micro-inventory-service/develop.svg?style=flat-square)](https://codecov.io/gh/devcars45/micro-inventory-service/)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/devcars45/micro-inventory-service/develop.svg?style=flat-square)](https://codecov.io/github/Cars45/micro-inventory-service/)
+![](https://github.com/Cars45/micro-inventory-service/workflows/Test%20Status/badge.svg)
+
 
 ## Description
 This microservice is going to be a wrapper over FCG APIs. All FCG APIs should be assessible here, and this includes the `car`, 
