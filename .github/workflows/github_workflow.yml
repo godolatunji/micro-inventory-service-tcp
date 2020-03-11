@@ -32,6 +32,6 @@ jobs:
       run: yarn test --coverage
     - name: Upload Test to CodeCov
       run: codecov
-    
+
       env:
         CI: true
