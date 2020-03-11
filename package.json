@@ -1,7 +1,7 @@
 {
   "name": "microservice-starter-kit",
   "version": "0.0.1",
-  "description": "a genewral microservice starter kit with databsse configuration done",
+  "description": "Micro Inventory Service",
   "author": "Olatunji Ayodabo",
   "license": "MIT",
   "scripts": {
