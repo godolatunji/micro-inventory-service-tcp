@@ -346,7 +346,7 @@ export class CarRepository extends BaseRepository {
   `;
 
   async listCars(carQuery: any): Promise<Car[]> {
-    const fields = carQuery.fields.split(',');
+    const fields = carQuery.fields ? carQuery.fields.split(',') : [];
     delete carQuery.fields;
     let filter = {
       sort: [
