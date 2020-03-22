@@ -2,6 +2,7 @@ import { HttpService, Injectable, Logger } from '@nestjs/common';
 import { RpcException } from '@nestjs/microservices';
 import { CacheService } from './cache/cache.service';
 import { config } from './config';
+import { GenericException } from './errors/generic-exception';
 
 @Injectable()
 export class BaseRepository {
@@ -27,7 +28,7 @@ export class BaseRepository {
     if (!token) {
       const body: any = await this.login();
       token = body.data.login.token;
-      await this.cacheService.save('inventory::fgc::token', token);
+      await this.cacheService.save('inventory::fgc::token', token, 252000);
     }
 
     const header = { Authorization: `Bearer ${token}` };
