@@ -14,4 +14,9 @@ export class CarController {
     // this should be typed
     return this.carService.findAll({ carQuery, headers });
   }
+
+  @MessagePattern({ cmd: 'carRawQuery' })
+  rawQuery({ query, headers }): Promise<any> {
+    return this.carService.rawQuery({ query, headers });
+  }
 }

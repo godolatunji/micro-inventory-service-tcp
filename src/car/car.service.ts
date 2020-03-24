@@ -9,4 +9,9 @@ export class CarService {
     const resp = this.carRepository.listCars(carQuery);
     return resp;
   }
+
+  async rawQuery({ query, headers }) {
+    const resp = await this.carRepository.rawQuery(query);
+    return resp;
+  }
 }

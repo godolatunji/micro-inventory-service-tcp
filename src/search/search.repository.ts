@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { BaseRepository } from 'base.repository';
 
 @Injectable()
-export class InspectionRepository extends BaseRepository {
+export class SearchRepository extends BaseRepository {
   async rawQuery(query: string): Promise<any> {
-    return this.sendRequest('inspection', query);
+    return this.sendRequest('search', query);
   }
 }

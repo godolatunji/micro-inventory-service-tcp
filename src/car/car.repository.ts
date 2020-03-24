@@ -465,4 +465,8 @@ export class CarRepository extends BaseRepository {
     const cars: Car[] = resp.data.car.list;
     return cars;
   }
+
+  async rawQuery(query: string): Promise<any> {
+    return this.sendRequest('car', query);
+  }
 }
