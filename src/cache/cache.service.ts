@@ -12,7 +12,7 @@ export class CacheService {
   save(key: string, data: string, duration?: number): Promise<void> {
     return new Promise((resolve, reject) => {
       if (duration) {
-        this.client.set(key, data, duration, err => {
+        this.client.set(key, data, 'EX', duration, err => {
           if (err) return reject(err);
 
           return resolve();
