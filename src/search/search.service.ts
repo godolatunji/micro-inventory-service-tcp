@@ -5,8 +5,8 @@ import { SearchRepository } from './search.repository';
 export class SearchService {
   constructor(private readonly searchRepository: SearchRepository) {}
 
-  async rawQuery({ query, headers }) {
-    const resp = await this.searchRepository.rawQuery(query);
+  async rawQuery({ data, headers }) {
+    const resp = await this.searchRepository.rawQuery(data);
     return resp;
   }
 }

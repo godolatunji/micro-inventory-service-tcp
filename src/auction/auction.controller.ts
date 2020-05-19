@@ -10,7 +10,7 @@ export class AuctionController {
   ) {}
 
   @MessagePattern({ cmd: 'auctionRawQuery' })
-  rawQuery({ query, headers }): Promise<any> {
-    return this.auctionService.rawQuery({ query, headers });
+  rawQuery({ headers, data }): Promise<any> {
+    return this.auctionService.rawQuery({ headers, data });
   }
 }

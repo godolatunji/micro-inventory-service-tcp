@@ -5,13 +5,13 @@ import { CarRepository } from './car.repository';
 export class CarService {
   constructor(private readonly carRepository: CarRepository) {}
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async findAll({ carQuery, headers }) {
-    const resp = this.carRepository.listCars(carQuery);
+  async findAll({ data, headers }) {
+    const resp = this.carRepository.listCars(data);
     return resp;
   }
 
-  async rawQuery({ query, headers }) {
-    const resp = await this.carRepository.rawQuery(query);
+  async rawQuery({ data, headers }) {
+    const resp = await this.carRepository.rawQuery(data);
     return resp;
   }
 }

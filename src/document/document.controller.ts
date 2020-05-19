@@ -10,7 +10,7 @@ export class DocumentController {
   ) {}
 
   @MessagePattern({ cmd: 'documentRawQuery' })
-  rawQuery({ query, headers }): Promise<any> {
-    return this.documentService.rawQuery({ query, headers });
+  rawQuery({ data, headers }): Promise<any> {
+    return this.documentService.rawQuery({ data, headers });
   }
 }

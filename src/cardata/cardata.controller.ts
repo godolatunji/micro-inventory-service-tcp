@@ -10,7 +10,7 @@ export class CarDataController {
   ) {}
 
   @MessagePattern({ cmd: 'cardataRawQuery' })
-  rawQuery({ query, headers }): Promise<any> {
-    return this.carDataService.rawQuery({ query, headers });
+  rawQuery({ data, headers }): Promise<any> {
+    return this.carDataService.rawQuery({ data, headers });
   }
 }

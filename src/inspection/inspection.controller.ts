@@ -10,7 +10,7 @@ export class InspectionController {
   ) {}
 
   @MessagePattern({ cmd: 'inspectionRawQuery' })
-  rawQuery({ query, headers }): Promise<any> {
-    return this.inspectionService.rawQuery({ query, headers });
+  rawQuery({ data, headers }): Promise<any> {
+    return this.inspectionService.rawQuery({ data, headers });
   }
 }

@@ -5,8 +5,8 @@ import { DocumentRepository } from './document.repository';
 export class DocumentService {
   constructor(private readonly documentRepository: DocumentRepository) {}
 
-  async rawQuery({ query, headers }) {
-    const resp = await this.documentRepository.rawQuery(query);
+  async rawQuery({ data, headers }) {
+    const resp = await this.documentRepository.rawQuery(data);
     return resp;
   }
 }

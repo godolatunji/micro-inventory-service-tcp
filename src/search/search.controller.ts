@@ -10,7 +10,7 @@ export class SearchController {
   ) {}
 
   @MessagePattern({ cmd: 'searchRawQuery' })
-  rawQuery({ query, headers }): Promise<any> {
-    return this.searchService.rawQuery({ query, headers });
+  rawQuery({ data, headers }): Promise<any> {
+    return this.searchService.rawQuery({ data, headers });
   }
 }

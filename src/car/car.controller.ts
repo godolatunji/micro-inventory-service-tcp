@@ -10,13 +10,13 @@ export class CarController {
   ) {}
 
   @MessagePattern({ cmd: 'listCars' })
-  find({ carQuery, headers }): Promise<any> {
+  find({ data, headers }): Promise<any> {
     // this should be typed
-    return this.carService.findAll({ carQuery, headers });
+    return this.carService.findAll({ data, headers });
   }
 
   @MessagePattern({ cmd: 'carRawQuery' })
-  rawQuery({ query, headers }): Promise<any> {
-    return this.carService.rawQuery({ query, headers });
+  rawQuery({ headers, data }): Promise<any> {
+    return this.carService.rawQuery({ headers, data });
   }
 }

@@ -5,8 +5,8 @@ import { InspectionRepository } from './inspection.repository';
 export class InspectionService {
   constructor(private readonly inspectionRepository: InspectionRepository) {}
 
-  async rawQuery({ query, headers }) {
-    const resp = await this.inspectionRepository.rawQuery(query);
+  async rawQuery({ data, headers }) {
+    const resp = await this.inspectionRepository.rawQuery(data);
     return resp;
   }
 }
