@@ -9,12 +9,6 @@ export class CarController {
     private readonly carService: CarService,
   ) {}
 
-  @MessagePattern({ cmd: 'listCars' })
-  find({ data, headers }): Promise<any> {
-    // this should be typed
-    return this.carService.findAll({ data, headers });
-  }
-
   @MessagePattern({ cmd: 'carRawQuery' })
   rawQuery({ headers, data }): Promise<any> {
     return this.carService.rawQuery({ headers, data });

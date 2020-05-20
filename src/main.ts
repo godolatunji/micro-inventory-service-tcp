@@ -14,9 +14,7 @@ async function bootstrap() {
   });
   // const app = await NestFactory.create(AppModule);
   await app.listen(() =>
-    Logger.log(
-      `micro inventory service starter kit started on port ${config.port}`,
-    ),
+    Logger.log(`micro inventory service started on port ${config.port}`),
   );
 }
 bootstrap();
