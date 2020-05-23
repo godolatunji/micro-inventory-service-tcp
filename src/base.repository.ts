@@ -48,7 +48,7 @@ export class BaseRepository {
       const resp: any = await this.httpService
         .post(`${config.fcg.baseUrl}/${url}/`, data, { headers })
         .toPromise();
-      return resp.data;
+      return resp.data.data;
     } catch (err) {
       Logger.log(err);
       throw new RpcException(err.message);
