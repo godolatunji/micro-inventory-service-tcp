@@ -7,7 +7,6 @@ import {
   ManyToMany,
   ManyToOne,
   PrimaryColumn,
-  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { BodyType } from './body-type.model';
