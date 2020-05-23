@@ -1,4 +1,4 @@
-import { JsonSocket } from '@nestjs/microservices';
+import { Customer } from 'customer/customer.model';
 import {
   Column,
   CreateDateColumn,
@@ -65,7 +65,7 @@ export class Car {
   @Column({ default: null })
   mileage: number;
 
-  @Column({ unique: true })
+  @Column({ unique: true, default: null })
   internalId: string;
 
   @Column({ unique: true, default: null })
@@ -103,6 +103,9 @@ export class Car {
 
   @ManyToOne(type => Model)
   model: Model;
+
+  @ManyToOne(type => Customer)
+  customer: Customer;
 
   @Column({
     type: 'enum',
