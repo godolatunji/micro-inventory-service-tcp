@@ -22,6 +22,26 @@ const schema = joi
     FCG_BASE_URL: joi.string().required(),
     FCG_USERNAME: joi.string().required(),
     FCG_PASSWORD: joi.string().required(),
+
+    REDIS_URL: joi.string().required(),
+
+    // database configs
+    PGHOST: joi.string().required(),
+    PGUSER: joi.string().required(),
+    PGPASSWORD: joi.string().required(),
+    PGDATABASE: joi.string().required(),
+    PGPORT: joi
+      .number()
+      .port()
+      .required()
+      .default(5432),
+    DATABASE_LOGGING: joi
+      .boolean()
+      .truthy('TRUE')
+      .truthy('true')
+      .falsy('FALSE')
+      .falsy('false')
+      .default(false),
   })
   .unknown()
   .required();
@@ -39,5 +59,14 @@ export const config = {
     baseUrl: envVars.FCG_BASE_URL,
     username: envVars.FCG_USERNAME,
     password: envVars.FCG_PASSWORD,
+  },
+  redisUrl: envVars.REDIS_URL,
+  db: {
+    port: envVars.PGPORT,
+    host: envVars.PGHOST,
+    username: envVars.PGUSER,
+    password: envVars.PGPASSWORD,
+    name: envVars.PGDATABASE,
+    logging: envVars.DATABASE_LOGGING,
   },
 };
